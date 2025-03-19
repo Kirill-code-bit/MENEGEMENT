@@ -1,7 +1,84 @@
 from django.shortcuts import render, redirect
-from .models import AboutPage, ContactPage, Student, Notice, Teacher
+from .models import AboutPage, Item, Grade, Schedule, Attendance, ContactPage, Course, Student, Notice, Teacher
+from .forms import AttendanceForm, SearchForm, ScheduleForm, GradeForm
 
 # Create your views here.
+def search(request):
+    results = []
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Item.objects.filter(name__icontains=query)
+    else:
+        form = SearchForm()
+    
+    return render(request, 'search.html', {'form': form, 'results': results})
+
+
+def add_grade(request):
+    if request.method == 'POST':
+        form = GradeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('grades_list')
+    else:
+        form = GradeForm()
+    return render(request, 'add_grade.html', {'form': form})
+
+
+def grades_list(request):
+    grades = Grade.objects.all()
+    return render(request, 'grades_list.html', {'grades': grades})
+
+
+def schedule_list(request):
+    schedules = Schedule.objects.all()
+    return render(request, 'schedule_list.html', {'schedules': schedules})
+
+
+def add_schedule(request):
+    if request.method == 'POST':
+        form = ScheduleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('schedule_list')  # Перенаправление на страницу со списком расписаний
+    else:
+        form = ScheduleForm()
+    return render(request, 'add_schedule.html', {'form': form})
+
+
+def attendance_form(request):
+    if request.method == 'POST':
+        student_name = request.POST.get('student_name')
+        date = request.POST.get('date')
+        is_present = request.POST.get('is_present') == 'on'
+        
+        Attendance.objects.create(
+            student_name=student_name,
+            date=date,
+            is_present=is_present
+        )
+        return redirect('attendance_form')
+    
+    return render(request, 'attendance_form.html')
+
+
+def add_attendance(request):
+    if request.method == 'POST':
+        form = AttendanceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('attendance_list')  # Перенаправление на страницу со списком посещаемости
+    else:
+        form = AttendanceForm()
+    return render(request, 'add_attendance.html', {'form': form})
+
+
+def attendance_list(request):
+    attendances = Attendance.objects.all()
+    return render(request, 'attendance_list.html', {'attendances': attendances})
+
 def home(request):
     publicNotices = Notice.objects.filter(isPublic = True)
     data = {"public_notices": publicNotices}
@@ -16,6 +93,17 @@ def contact(request):
     contact_text = ContactPage.objects.all()
     data = {"contactDetails": contact_text}
     return render(request, 'contact.html', data)
+
+def student_list(request):
+    students = Student.objects.all()
+    return render(request, 'student_list.html', {'students': students})
+
+
+
+def course_list(request):
+    courses = Course.objects.all()
+    return render(request, 'course_list.html', {'courses': courses})
+
 
 def adminPanel(request):
     if 'admin_user' in request.session:
