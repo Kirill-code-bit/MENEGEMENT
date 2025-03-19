@@ -1,6 +1,51 @@
 {% extends 'admin/admin_base.html' %}
-
+{% load static %}
 {% block body %}
+<body>
+  <style>
+    body{
+        background-color:mediumaquamarine;
+    }
+    input[type="text"]{
+        margin-left: 440px;
+        width: 30%;
+    }
+    input[type="email"]{
+        margin-left: 440px;
+        width: 30%;
+    }
+    input[type="tel"]{
+        margin-left: 440px;
+        width: 30%;
+    }
+    input[type="submit"]{
+        margin-left: 440px;
+        width: 30%;
+        position: relative;
+        top: -60px;
+    }
+    select, .form-select, option{
+        margin-left: 440px;
+        width: 30%;
+    }
+    .hr{
+        width: 7px solid blue;
+        height: 3px solid violet;
+    }
+    label, .input-group-text{
+        margin-left: 440px;
+        width: 30%;
+    }
+    .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+    }
+        </style> 
 <div class="container" style="margin: 80px;">
     <h2>Add Faculty</h2>
     <form action="{% url 'add_teacher' %}" method="post">
@@ -26,4 +71,5 @@
         <input type="submit" class="btn btn-primary form-control" value="Add Faculty">
     </form>
 </div>
+</body>
 {% endblock %}
