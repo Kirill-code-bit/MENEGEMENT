@@ -6,15 +6,15 @@
 
 {% block body %}
     <div class="container" style="margin: 100px;">
-        <h1>Manage Notices</h1>
+        <h1>управление уведомлениями</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>S.No</th>
-                    <th>Title</th>
-                    <th>Content</th>
-                    <th>Is Public</th>
-                    <th>Update</th>
+                    <th> с.но </th>
+                    <th>заглавие</th>
+                    <th>контент</th>
+                    <th>публика</th>
+                    <th>обновить</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,8 +64,8 @@
                                         <label class="input-group-text" for="inputGroupSelect01">Status</label>
                                         <select class="form-select" name="status" id="inputGroupSelect01">
                                           <option selected>{{notice.isPublic}}</option>
-                                          <option value="True">True</option>
-                                          <option value="False">False</option> 
+                                          <option value="True">истина</option>
+                                          <option value="False">ложь</option> 
                                         </select>
                                     </div>
                                     <br><br>
