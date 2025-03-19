@@ -7,25 +7,25 @@
 {% block body %}
 
 <div class="container-fluid w-100" style="margin: 100px 0px;">
-    <h1>Manage Students</h1>
+    <h1>управление студентами</h1>
     <hr>
 
 
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Student Id</th>
-                <th>Full Name</th>
-                <th>Father Name</th>
-                <th>Mother Name</th>
-                <th>Date of Birth</th>
-                <th>Gender</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>Email</th>
-                <th>Contact Number</th>
-                <th>Course</th>
-                <th>Update</th>
+                <th>студент id</th>
+                <th>полнео имя</th>
+                <th>имя отца</th>
+                <th>имя матери</th>
+                <th>дата рождения</th>
+                <th>пол</th>
+                <th>адресс</th>
+                <th>город</th>
+                <th>электронная почта</th>
+                <th>контактный номер</th>
+                <th>курс</th>
+                <th>обновить</th>
             </tr>
         </thead>
         <tbody>
@@ -84,8 +84,8 @@
                                     <label class="input-group-text" for="inputGroupSelect01">Gender</label>
                                     <select class="form-select" name="gender" id="inputGroupSelect01">
                                       <option selected>{{student.gender}}</option>
-                                      <option value="Male">Male</option>
-                                      <option value="Female">Female</option> 
+                                      <option value="Male">мужской</option>
+                                      <option value="Female">женский</option> 
                                     </select>
                                 </div>
                                 <br>
@@ -123,7 +123,7 @@
                                 <br><br>
                         
                         
-                                <h4>Login Details</h4>
+                                <h4>Логин детали</h4>
                                 <hr>
                                 <input type="text" value="{{student.user_name}}" name="stu_user_name" class="form-control" placeholder="Username">
                                 <br>
