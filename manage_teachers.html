@@ -6,17 +6,17 @@
 
 {% block body %}
     <div class="container" style="margin: 100px;">
-        <h1>Manage Faculty</h1>
+        <h1>управление факультетами </h1>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>S.No</th>
-                    <th>Full Name</th>
-                    <th>Gender</th>
-                    <th>Email</th>
-                    <th>Contact Number</th>
-                    <th>Qualification</th>
-                    <th>Update</th>
+                    <th> с.но </th>
+                    <th>полное имя</th>
+                    <th>пол</th>
+                    <th>электронная почта</th>
+                    <th>контактный номер</th>
+                    <th>квалификация</th>
+                    <th>обновить</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,7 +54,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Teacher Details</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">обновить детали преподавателя</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -68,11 +68,11 @@
                                     <br>
                                     <textarea name="qualification" placeholder="Qualification" class="form-control" cols="30" rows="10">{{teacher.qualification}}</textarea>
                                     <div class="input-group mb-3">
-                                        <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+                                        <label class="input-group-text" for="inputGroupSelect01">пол</label>
                                         <select class="form-select" name="gender" id="inputGroupSelect01">
                                           <option selected>{{teacher.gender}}</option>
-                                          <option value="Male">Male</option>
-                                          <option value="Female">Female</option> 
+                                          <option value="Male">мужской </option>
+                                          <option value="Female">женский</option> 
                                         </select>
                                     </div>
                                     <br><br>
