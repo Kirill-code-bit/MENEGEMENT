@@ -1,36 +1,84 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block body %}
 <style>
-    table{
-        width: 100%;
+    h5, button, p, label, input[type="text"] {
+    position: relative;
+    top: 570px;
+    left: 820px;
     }
-    table th{
-        text-align: center;
+body{
+        background-color: mediumaquamarine;
     }
-    table td{
-        text-align: center;
-        padding: 10px;
-        border: 1px solid;
-    }
+.table {
+	width: 100%;
+	border: none;
+    top: -140px;
+    position: relative;
+	border-collapse: separate;
+}
+.table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #EDEDED;
+	font-size: 14px;
+	border-top: 1px solid #ddd;
+}
+.table tr th:first-child, .table tr td:first-child {
+	border-left: 1px solid #ddd;
+}
+.table tr th:last-child, .table tr td:last-child {
+	border-right: 1px solid #ddd;
+}
+.table thead tr th:first-child {
+	border-radius: 20px 0 0 0;
+}
+.table thead tr th:last-child {
+	border-radius: 0 20px 0 0;
+}
+.table tbody td {
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.table tbody tr:nth-child(even) {
+	background: #F8F8F8;
+}
+.table tbody tr:last-child td{
+	border-bottom: 1px solid #ddd;
+}
+.table tbody tr:last-child td:first-child {
+	border-radius: 0 0 0 20px;
+}
+.table tbody tr:last-child td:last-child {
+	border-radius: 0 0 20px 0;
+}
 </style>
+
+
     <div class="container w-100 my-5">
         <h1 class="text-center">Contact</h1>
-        <hr>
-        <table>
-            <tr>
-                <th>
-                    Address
-                </th>
-                <th>
-                    Contact Number
-                </th>
-                <th>
-                    Email
-                </th>
-            </tr>
-
-            <tr>
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Contact Number
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                    </tr>
+            </thead>
+            <tbody>
+                    <tr>
                 <td>
                     {{contactDetails.first.address}}
                 </td>
@@ -41,7 +89,79 @@
                     {{contactDetails.first.email}}
                 </td>
             </tr>
+
+            <tr>
+                <td>
+                    r7t5niue567i8soie86o0,.pr9o7m4i9
+                </td>
+                <td>
+                    rtm78io rd57iodem57i9de579ides5rtoi
+                </td>
+                <td>
+                    drt ujdr6u n4s6tyiusw4 t6ui
+                </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            rt7ude76iysry6usi8468uaeztiaze6t
+                        </td>
+                        <td>
+                            r7mie57i8ue567i8es567i8sw4768
+                        </td>
+                        <td>
+                            cr6erm57ie5m7iew57mi5e7m
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>
+                            nwe6ruwen6ru es6yusw486tu8
+                        </td>
+                        <td>
+                            rtm78irm765timr57y8ied5768i
+                        </td>
+                        <td>
+                             r67irn67iner67ie57yiw75ry
+                        </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    dsryjrsedyuned6rue567y446
+                                </td>
+                                <td>
+                                    en567une567u5ne67un4e67u
+                                </td>
+                                <td>
+                                    drn y6,bjurdeyjunner6uer6
+                                </td>
+                            </tr>
+                
+                            <tr>
+                                <td>
+                                    wr6ueb4673456hb73467n5ue
+                                </td>
+                                <td>
+                                    3467g453546435643g5624356
+                                </td>
+                                <td>
+                                    dryjdryjkderykjisdry7kj
+                                </td>
+                                    </tr>
+            </tbody>
+            <div class="col-md-5 offset-md-1 mb-3">
+                
+                <form>
+                  <h5>Subscribe to our newsletter</h5>
+                  <p>Monthly digest of what's new and exciting from us.</p>
+                  <div class="dfle">
+                    <label for="nwsltr" class="visually-hidden">Email address</label>
+                    <input id="nwsltr" type="text" class="form-control" placeholder="Email address">
+                    <button  type="button" style="border: 2px; background-color: green; margin: 10px;
+                    padding: 5px;">Subscribe</button>
+                  </div>
+                </form>
+            </div>
         </table>
+        <hr>
     </div>
-    <hr>
 {% endblock %}
