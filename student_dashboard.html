@@ -6,55 +6,55 @@
 
 {% block body %}
     <div class="container" style="margin: 100px;">
-        <h1>Dashboard</h1>
-        <a href="{% url 'view_notices' %}" class="btn btn-warning" style="float: right; margin-top: -70px;">View Notices</a>
+        <h1>админ панель</h1>
+        <a href="{% url 'view_notices' %}" class="btn btn-warning" style="float: right; margin-top: -70px;">просмотр уведомлений</a>
         <table class="table">
     
             <tr>
-                <th>Student Name</th>
+                <th>имя студента</th>
                 <td>{{student.full_name}}</td>
 
-                <th>Father's Name</th>
+                <th>имя отца</th>
                 <td>{{student.father_name}}</td>
             </tr>
 
             <tr>
-                <th>Gender</th>
+                <th>пол</th>
                 <td>{{student.gender}}</td>
 
-                <th>Mother's Name</th>
+                <th>имя мамы</th>
                 <td>{{student.mother_name}}</td>
             </tr>
 
             <tr>
-                <th>Contact Number</th>
+                <th>контактный номер</th>
                 <td>{{student.contact_num}}</td>
 
-                <th>Email</th>
+                <th>электронная почта</th>
                 <td>{{student.email}}</td>
             </tr>
 
             <tr>
-                <th>Address</th>
+                <th>адресс</th>
                 <td>{{student.address}}</td>
 
-                <th>City</th>
+                <th>город</th>
                 <td>{{student.city}}</td>
             </tr>
 
             <tr>
-                <th>Student Id</th>
+                <th>студент id</th>
                 <td>{{student.stu_id}}</td>
 
-                <th>Date of Birth</th>
+                <th>дата рождения</th>
                 <td>{{student.date_of_birth}}</td>
             </tr>
 
             <tr>
-                <th>Course</th>
+                <th>курс</th>
                 <td>{{student.course}}</td>
 
-                <th>User Name</th>
+                <th>имя пользователя</th>
                 <td>{{student.user_name}}</td>
             </tr>
         </table>
