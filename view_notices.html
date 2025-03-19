@@ -6,13 +6,13 @@
 
 {% block body %}
     <div class="container" style="margin: 100px;">
-        <h1>Notices for Students</h1>
+        <h1>уведомления для студента</h1>
         {% if notices %}
         <table class="table">
             <tr>
-                <th>S.No</th>
-                <th>Title</th>
-                <th>Content</th>
+                <th> с.но </th>
+                <th>заголовок</th>
+                <th>контент</th>
             </tr>
             {% for notice in notices reversed %}
             <tr>
@@ -23,7 +23,7 @@
             {% endfor %}
         </table>
         {% else %}
-        <h2 class="text-danger mx-5 my-5">Notices are not available.</h2>
+        <h2 class="text-danger mx-5 my-5">уведомления не доступны</h2>
         {% endif %}
     </div>
 {% endblock %}
