@@ -6,7 +6,7 @@
 
 {% block body %}
 <div class="container" style="margin: 80px;">
-    <h2>Add Student</h2>
+    <h2>добавить студента</h2>
     <form action="{% url 'add_student' %}" method="post">
         {% csrf_token %}
         <input type="text" name="full_name" class="form-control" placeholder="Full Name">
@@ -18,9 +18,9 @@
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Gender</label>
             <select class="form-select" name="gender" id="inputGroupSelect01">
-              <option selected>Choose...</option>
-              <option value="Male">Male</option> 
-              <option value="Female">Female</option>
+              <option selected>выбрать...</option>
+              <option value="Male">мужской</option> 
+              <option value="Female">женский</option>
             </select>
         </div>
         <br>
@@ -35,9 +35,9 @@
         <input type="date" name="dob" class="form-control" id="">
         <br>
         <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Select Course</label>
+            <label class="input-group-text" for="inputGroupSelect01">выбрать курс</label>
             <select class="form-select" name="course" id="inputGroupSelect01">
-              <option selected>Choose...</option>
+              <option selected>выбрать...</option>
               <option value="BSC">BSC</option>
               <option value="BA">BA</option>
               <option value="BCOM">BCOM</option>
@@ -57,7 +57,7 @@
         <br><br>
 
 
-        <h4>Login Details</h4>
+        <h4>детали логина</h4>
         <hr>
         <input type="text" name="stu_user_name" class="form-control" placeholder="Username">
         <br>
